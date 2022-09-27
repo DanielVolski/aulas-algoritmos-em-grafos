@@ -24,7 +24,28 @@ class NodeState(Enum):
 
 class Node:
     """
-    Represents a node of a graph
+    Represents a node (or vertice from a graph). It includes some basic
+    algorithms related to it
+    ...
+
+    Attributes
+    ---------
+    name : str
+        A simple tag to differentiate a node from the others
+    distance : int
+        The distance between a u node to this actual instance
+    parent : Node
+        Indicates an node that is precede of the actual one
+    state : NodeState 
+        It represents the actual state of a node in according to a
+        search algorithm
+    adj : []
+        A list of the nodes that are adjacents to the actual one
+
+    Methods
+    -------
+    add_adj_node(node) -> None
+        Add a node to the adjacence list of the actual node   
     """
     
     def __init__(self, name: str) -> None:
@@ -51,6 +72,20 @@ class Node:
 class Edge:
     """
     Represents an edge of a graph
+    ...
+
+    Attributes
+    ---------
+    u : Node
+        The node where the edge start
+    v : Node
+        The node where the edge finishes
+    w : int
+        The weight of the edge
+
+    Methods
+    -------
+
     """
 
     def __init__(self, u: Node, v: Node, w = 1) -> None:
@@ -67,7 +102,6 @@ class Edge:
 class Graph:
     """
     Represents a graph. It includes some basic algorithms related to it
-
     ...
 
     Attributes
